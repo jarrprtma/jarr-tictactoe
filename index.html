@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TicTacToe Online Super UI</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">🔥 TicTacToe</div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">How to Play</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>TicTacToe Online <span class="gradient">Play with Friends</span></h1>
+      <p>Bermain game klasik dengan sentuhan modern. Buat room, share kode, dan mainkan secara real-time 🎮</p>
+      <div class="cta">
+        <input type="text" id="roomInput" placeholder="Masukkan kode room...">
+        <button onclick="joinRoom()" class="btn">Join Room</button>
+        <button onclick="createRoom()" class="btn btn-alt">Create Room</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Game Section -->
+  <main class="game-section">
+    <div id="game" class="game-container hidden">
+      <h2 id="roomCodeDisplay">Room: <span id="roomCode"></span></h2>
+      <p>Giliran: <span id="turn"></span></p>
+      <div class="board" id="board"></div>
+      <div class="game-controls">
+        <button onclick="resetGame()" class="btn">🔄 Reset</button>
+        <button onclick="leaveRoom()" class="btn btn-danger">❌ Leave</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal (Winner / Info) -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <h2 id="modalMessage"></h2>
+      <button onclick="closeModal()" class="btn">OK</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 TicTacToe Online | Dibuat dengan ❤️ & Socket.io</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
